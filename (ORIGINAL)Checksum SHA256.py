@@ -7,9 +7,9 @@ import os
 
 hashTypes = ['SHA256','MD5', 'SHA1']
 
-filePath = input("specify exact file path: \n\n")
+filePath = raw_input("specify exact file path: \n\n")
 
-fileType = input("specify checksum type: \n")
+fileType = raw_input("specify checksum type: \n")
 
 if(fileType not in hashTypes):
    print("Invalid file type \n\n")
