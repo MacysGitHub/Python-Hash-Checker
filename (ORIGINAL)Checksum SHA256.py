@@ -10,13 +10,15 @@ hashTypes = ['sha256' , 'md5', 'sha1']
 sysPath = sys.path[0]
 
 root = tk.Tk()
+root.winfo_toplevel()
 root.withdraw()
 
-filePath = filedialog.askopenfilename(initialdir = "~/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+filePath = filedialog.askopenfilename(initialdir = "~/",title = "Select file")
 
 root.update()
 
 fileSize = os.path.getsize(filePath)
+print("File selected: " + filePath)
 print("\nfile is: " + str(fileSize) + " bytes\n")
 
 def SHA256(filePath):
@@ -65,7 +67,7 @@ def MD5(filePath):
 
 
 def SHA1(filePath):
-   print("SHA1 processing")
+   print("processing SHA1...")
 
    h = hashlib.sha1()
 
