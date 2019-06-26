@@ -18,8 +18,6 @@ root.update()
 
 fileSize = os.path.getsize(filePath)
 print("\nfile is: " + str(fileSize) + " bytes")
-root.wm_deiconify()
-root.grid_location(200, 300)
 
 def SHA256(filePath):
    """"This function returns the SHA-1 hash
