@@ -1,11 +1,12 @@
 import hashlib
 import sys
 import os
+import platform
 from tkinter import filedialog
 import tkinter as tk
 #from progress.bar import Bar
 
-hashTypes = ['sha256' , 'md5', 'sha1']
+hashTypes = ['sha256', 'md5', 'sha1']
 
 sysPath = sys.path[0]
 
@@ -13,8 +14,11 @@ root = tk.Tk()
 root.winfo_toplevel()
 root.withdraw()
 
-filePath = filedialog.askopenfilename(initialdir = "~/",title = "Select file")
-
+system = platform.system()
+if system != 'Windows':
+    filePath = filedialog.askopenfilename(initialdir="~/", title="Select file")
+else:
+    filePath = filedialog.askopenfilename(initialdir="C:\\Users\\")
 root.update()
 
 fileSize = os.path.getsize(filePath)
