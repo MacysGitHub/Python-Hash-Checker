@@ -17,7 +17,7 @@ filePath = filedialog.askopenfilename(initialdir = "~/",title = "Select file",fi
 root.update()
 
 fileSize = os.path.getsize(filePath)
-print("\nfile is: " + str(fileSize) + " bytes")
+print("\nfile is: " + str(fileSize) + " bytes\n")
 
 def SHA256(filePath):
    """"This function returns the SHA-1 hash
@@ -81,7 +81,7 @@ def SHA1(filePath):
       return h.hexdigest()
 
 
-fileType = input("specify checksum type: " + "(md5, sha1, sha256)" + "\n")
+fileType = input("specify checksum type: " + "(ex. md5, sha1, sha256)" + "\n")
 
 if fileType.lower() == "md5":
     message = MD5(filePath)
