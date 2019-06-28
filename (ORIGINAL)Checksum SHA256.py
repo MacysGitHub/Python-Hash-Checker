@@ -20,9 +20,9 @@ root.withdraw()
 system = platform.system()
 
 if system != 'Windows':
-    filePath = filedialog.askopenfilename(initialdir="~/", title="Select file")
+    filePath = filedialog.askopenfilename(initialdir="~/", title="Select File")
 else:
-    filePath = filedialog.askopenfilename(initialdir="C:\\Users\\")
+    filePath = filedialog.askopenfilename(initialdir="C:\\Users\\", title="Select File")
 
 root.update()
 
@@ -116,8 +116,6 @@ root.after_idle(root.attributes, '-topmost', 0)
 check_sum_text = tk.Text(root, height=2, width=30)
 check_sum_text.pack()
 
-
-print("T OK!")
 root.update()
 
 sha256 = tk.Button(root, text="SHA256", command=filetypesha256)
