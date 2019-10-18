@@ -15,6 +15,7 @@ sysPath = sys.path[0]
 
 root = tk.Tk()
 root.attributes('-topmost', 1)
+root.geometry("500x150")
 root.withdraw()
 
 system = platform.system()
@@ -111,12 +112,13 @@ def exit():
 
 
 root.deiconify()
-root.lift()
 root.after_idle(root.attributes, '-topmost', 0)
-check_sum_text = tk.Text(root, height=2, width=30)
-check_sum_text.pack()
+root.lift()
 
 root.update()
+
+check_sum_text = tk.Text(root, height=2, width=64)
+check_sum_text.pack()
 
 sha256 = tk.Button(root, text="SHA256", command=filetypesha256)
 sha256.pack()
